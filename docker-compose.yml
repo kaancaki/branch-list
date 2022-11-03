@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  nodejsrevised:
+    container_name: task_nodejsRevised
+    build:
+      context: "./app/server/"
+      dockerfile: Dockerfile
+    volumes:
+      - "./app/server:/app/"
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3333:3000"
+
+  reactjsrevised:
+    container_name: task_reactjsRevised
+    build:
+      context: "./app/client"
+      dockerfile: Dockerfile
+    environment:
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - "./app/client:/app/"
+    ports:
+      - "3000:3000"
+
+  mysqlrevised:
+    container_name: task_mysqlRevised
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306:3306"
+
+    
+    
