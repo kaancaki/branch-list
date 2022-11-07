@@ -6,7 +6,7 @@ class AdresToGeoCode{
         this.axiosAdresGeo = axios.create({
             baseURL: this.baseURL,
             params: {
-                apikey: "93ef565d-d987-428d-8f7f-a85d05b1e5f8",
+                apikey: API_KEY_you_get_from_Yandex_Geo,
                 format: "json",
                 lang: "en-US"
 

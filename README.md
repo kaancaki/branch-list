@@ -9,24 +9,11 @@ This app was made so that a customer can view all their stores and information.
 
 ![image](https://i.hizliresim.com/3r30yet.png)
 
-
-## Planned to be added
-- Branch editing
-- Ability to add new branches
-- Database migrations
-- Show on maps by latitude and longitude
-- Filtering operations
-
 ## Install
- You will need docker for this project.
+ You will need docker for this project
 - Clone the project to your device
-- Open terminal in the directory where the docker-compose.yml file is located in the folder you cloned.
+- Go to the folder you cloned, run ```npm install``` inside the client and server folders
+- Open terminal in the directory where the docker-compose.yml file is located in the folder you cloned
+- Go to the ```app/server/api/gecode.js``` file to be able to automatically fetch the latitude and longitude data from the address. Then add the API KEY you got from Yandex Geo to the ```API_KEY_you_get_from_Yandex_Geo``` field.
 - Run the ```docker-compose up``` command in the terminal you opened
-- It works on API port 3333, Interface on port 3000\
-
-## Notes
-- Currently connecting to a remote db and fetching current data. If you want, you can also use the MySQL database that will be installed with docker. You can make the settings of the MySQL database system to be installed by using the contents of the .env file in the main directory. Please update the ```config.js``` file in the ```server``` folder by sticking to the information you entered.
-
-## Screenshots
-![image](https://i.hizliresim.com/i7lyky7.jpg)
-![image](https://i.hizliresim.com/hgczenf.jpg)
+- It works on Server port 3333, Client on port 3000
